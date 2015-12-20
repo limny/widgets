@@ -15,6 +15,6 @@ $result = $registry->db->query('SELECT id, name, (SELECT COUNT(id) FROM ' . DB_P
 if ($result->rowCount() > 0)
 	while ($cat = $result->fetch(PDO::FETCH_ASSOC))
 		if ($cat['num_posts'] > 0)
-			$widget->content .= '<a href="' . url('post/cat/' . $cat['id']) . '">' . $cat['name'] . '</a><br>';
+			$widget->content .= '<a href="' . url('post/cat/' . $cat['id']) . '">' . $cat['name'] . ' (' . $cat['num_posts'] . ')</a><br>';
 
 ?>
